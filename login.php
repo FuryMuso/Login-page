@@ -1,15 +1,8 @@
-<?php
-
-
-
-?>
-
 <!DOCTYPE html>
-<lang = en>
-<html>
+<html lang = en>
 <body>
 <h1>Login Page</h1>
-    <div>
+    <form method="GET">
         <div>
             <h2>Username:</h2>
             <input type="text" name="Username">
@@ -22,7 +15,7 @@
             <p><br></p>
             <input type="submit" value="Submit">
         </div>
-    </div>
+    </form>
 </body>
 </html>
 
