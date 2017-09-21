@@ -1,8 +1,18 @@
+<?php
+
+session_start();
+
+if ($_SESSION['loggedIn'] == 1) {
+    header('Location: account.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang = en>
 <body>
 <h1>Login Page</h1>
-    <form method="GET">
+    <form method="GET" action="account.php">
         <div>
             <h2>Username:</h2>
             <input type="text" name="Username">
