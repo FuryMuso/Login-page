@@ -1,19 +1,36 @@
 <?php
 
-var_dump($_GET);
+//var_dump($_GET);
 
-$username = 'dan';
-$password = 'hi';
+/**
+ * variables declared as $username & $password
+ *
+ * @param $username
+ * @param $password
+ *
+ * return as 'dan' and 'hi'
+ */
+
+$userThing = $_POST["Username"];
+$passThing = $_POST["Password"];
 
 session_start();
 
-if ($_SESSION['loggedIn'] !== 1) {
-    if ($username !== $_GET["Username"] || $password !== $_GET["Password"]) {
-        header('Location: login.php');
-    } else {
-        $_SESSION['loggedIn'] = 1;
+function loginChecking($userThing, $passThing) {
+
+    $username = 'dan';
+    $password = 'hi';
+
+    if ($_SESSION['loggedIn'] !== 1) {
+        if ($username !== $userThing || $password !== $passThing) {
+            header('Location: login.php');
+        } else {
+            $_SESSION['loggedIn'] = 1;
+        }
     }
 }
+
+loginChecking($userThing, $passThing);
 
 ?>
 
@@ -21,5 +38,8 @@ if ($_SESSION['loggedIn'] !== 1) {
 <html lang = en>
     <body>
         <h1>Account Page</h1>
+        <form method="POST" action="logout.php">
+            <input type="submit" value="LogOooot">
+        </form>
     </body>
 </html>
